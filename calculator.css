@@ -1,8 +1,9 @@
 body{
     background-color: darkgray;
     margin: 0;
-    /* display:flex;
-    flex-direction: column; */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -11,19 +12,16 @@ body{
     border-radius: 1em;
     min-width: 25rem;
     min-height: 35rem;
-    /* display:flex;
+    display:flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    align-content: stretch;
-    flex:auto;
-    gap: 0; */
+    gap:1em;    
+    padding: 1em;
 }
 .row{
-    height: 100%;
-    /* display:flex; */
-    /* align-content: stretch; */
-    /* justify-content: space-evenly; */
+    flex:1;
+    display:flex;
+    align-items: stretch;
+    gap: 1em;
 }
 
 .screen{
@@ -31,17 +29,19 @@ body{
     border: solid white 2px;
 }
 button{
+    flex:1;
     background-color: black;
     color: white;
     border: solid white 1px;
     border-radius: 1em;
-    height: 100%;
-    width: 100%;
 }
-.span{
-    height: 100%;
+button:hover{
+    background-color: white;
+    color: black;
 }
-
+button:active{
+    background-color:thistle;
+}
 
 
 
@@ -57,6 +57,7 @@ footer{
     color: azure;
     min-height: 10vh;
     align-self: stretch;
+    justify-self: flex-end;
 
     display: flex;
     align-content: center;
