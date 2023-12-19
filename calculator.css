@@ -20,13 +20,18 @@ body{
 .row{
     flex:1;
     display:flex;
-    align-items: stretch;
+    /* align-items: stretch; */
     gap: 1em;
 }
 
 .screen{
     border-radius: 1em;
     border: solid white 2px;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
 }
 button{
     flex:1;

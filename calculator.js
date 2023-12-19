@@ -1,6 +1,33 @@
 let no1 = 0.0,
     no2 = 0.0,
-    op = '+';
+    op = '+'
+    onscreen = '';
+
+
+
+let screen = document.querySelector('.screen');
+
+let buttons = document.querySelectorAll('button');
+
+buttons.forEach(element => {
+    element.addEventListener('click',() =>{
+        fillscreen(element.textContent);
+    });
+
+});
+
+function fillscreen(no){
+    onscreen = onscreen + no;
+    
+    const span = document.createElement('span');
+    span.textContent = onscreen;
+    screen.appendChild(span);
+    // screen.removeChild(span);
+
+}
+
+
+
 
 function operate(no1,no2,op){
     switch(op){
@@ -18,9 +45,6 @@ function operate(no1,no2,op){
             break;
     }
 }
-
-
-
 
 function add(x,y){
     return x+y;
