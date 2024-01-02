@@ -31,7 +31,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
 }
 button{
     flex:1;
