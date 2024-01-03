@@ -16,6 +16,17 @@ buttons.forEach(element => {
     });
 });
 
+let action = document.querySelectorAll('.action');
+action.forEach(element =>{
+    element.addEventListener('click',() =>{
+        //clear screen
+        op = element.textContent;
+         
+    })
+})
+
+
+
 let equal = document.querySelector('.equal');
 equal.addEventListener('click',() =>{
     operate(no1,no2,op);
