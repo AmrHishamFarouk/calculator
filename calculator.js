@@ -21,7 +21,7 @@ action.forEach(element =>{
     element.addEventListener('click',() =>{
         //clear screen
         op = element.textContent;
-         
+         //note
     })
 })
 
