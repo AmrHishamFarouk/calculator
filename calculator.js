@@ -1,8 +1,8 @@
 let no1 = 0.0,
     no2 = 0.0,
-    op = '+',
+    op = '',
     onscreen = '',
-    result = 0;
+    result = 0.0;
 
 
 
@@ -17,24 +17,48 @@ buttons.forEach(element => {
 });
 
 let action = document.querySelectorAll('.action');
+
 action.forEach(element =>{
     element.addEventListener('click',() =>{
-        //clear screen
+        //take the operator
         op = element.textContent;
-         //note
+        //saving first no.
+        no1 = parseFloat(onscreen);
+        //clearing the screen
+        if(screen.firstChild){
+            const span = screen.firstChild;
+            screen.removeChild(span);
+        }
+        onscreen = '';
     })
 })
 
 
 
 let equal = document.querySelector('.equal');
+
 equal.addEventListener('click',() =>{
+    no2 = parseFloat(onscreen);
+    onscreen = '';
     operate(no1,no2,op);
     fillscreen(result);
 })
 
 
-
+let clr = document.querySelector('.clr');
+clr.addEventListener('click',() =>{
+    no1 = 0.0,
+    no2 = 0.0,
+    op = '',
+    onscreen = '',
+    result = 0.0;
+    
+    //clearing the screen
+    if(screen.firstChild){
+        const span = screen.firstChild;
+        screen.removeChild(span);
+    }
+})
 
 function fillscreen(no){
     onscreen = onscreen + no;
@@ -79,16 +103,3 @@ function multiply(x,y){
 function divide(x,y){
     return x/y;
 }
-
-
-
-
-Number("10");          // returns 10
-Number(" 10  ");       // returns 10
-Number("10.33");       // returns 10.33
-
-parseFloat("10");        // returns 10
-parseFloat("10.33");     // returns 10.33
-parseFloat("10 20 30");  // returns 10
-parseFloat("10 years");  // returns 10
-parseFloat("years 10");  // returns NaN
