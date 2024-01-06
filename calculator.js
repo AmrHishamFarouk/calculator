@@ -20,16 +20,30 @@ let action = document.querySelectorAll('.action');
 
 action.forEach(element =>{
     element.addEventListener('click',() =>{
-        //take the operator
-        op = element.textContent;
-        //saving first no.
-        no1 = parseFloat(onscreen);
-        //clearing the screen
-        if(screen.firstChild){
-            const span = screen.firstChild;
-            screen.removeChild(span);
+        if(no1 != 0 && op != ''){
+            no2 = parseFloat(onscreen);
+            operate(no1,no2,op);
+            op = element.textContent;
+            no1 = result;
+            if(screen.firstChild){
+                const span = screen.firstChild;
+                screen.removeChild(span);
+            }
+            onscreen = '';
         }
-        onscreen = '';
+
+        if(no1 == 0 && no2 == 0){
+            //take the operator
+            op = element.textContent;
+            //saving first no.
+            no1 = parseFloat(onscreen);
+            //clearing the screen
+            if(screen.firstChild){
+                const span = screen.firstChild;
+                screen.removeChild(span);
+            }
+            onscreen = '';
+        }
     })
 })
 
@@ -39,8 +53,8 @@ let equal = document.querySelector('.equal');
 
 equal.addEventListener('click',() =>{
     no2 = parseFloat(onscreen);
-    onscreen = '';
     operate(no1,no2,op);
+    onscreen ='';
     fillscreen(result);
 })
 
@@ -75,6 +89,9 @@ function fillscreen(no){
 }
 
 function operate(no1,no2,op){
+    if(no2==0 && op =='/'){
+        fillscreen('error')
+    }
     switch(op){
         case '+':
             result = add(no1,no2);
