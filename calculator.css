@@ -23,7 +23,6 @@ body{
     /* align-items: stretch; */
     gap: 1em;
 }
-
 .screen{
     border-radius: 1em;
     border: solid white 2px;
@@ -47,6 +46,7 @@ button:active{
     background-color:thistle;
 }
 span{
+    font-size: 2rem;
     font-weight: bold;
 }
 
